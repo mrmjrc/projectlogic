@@ -1,0 +1,56 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8069
+  servlet:
+    context-path: /
+
+spring:
+  profiles:
+    active:
+      -pord
+  resources:
+# 由于我们的接口是通过springboot一键式打包成jar包发布到服务器的，因此在通过接口上传文件之后，客户端如果还需要再访问该文件，那就需要用到静态资源访问
+    static-locations: file:${upload.localtion.linux},file:${upload.localtion.windows},classpath:/META-INF/resources,classpath:/resources,classpath:/static,classpath:/public
+
+# Mybatis配置
+mybatis-plus:
+#  指定 mapper.xml 的路径，扫描mapper.xml
+  mapper-locations: classpath:mapper/**/*.xml
+#  实体类的扫描，多个package用逗号或者分号分隔
+  type-aliases-package:cn.mrmj.mapper
+#  配置全局变量
+  global-config:
+    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+    id-type: 3
+    #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+    field-strategy: 2
+    #驼峰下划线转换
+    db-column-underline: true
+    #刷新mapper 调试神器
+    refresh-mapper: true
+    #数据库大写下划线转换
+    capital-mode: true
+    #序列接口实现类配置
+    #key-generator: com.baomidou.springboot.xxx
+    #逻辑删除配置,删除为0，不删除为1
+    logic-delete-value: 0
+    logic-not-delete-value: 1
+    #自定义SQL注入器
+    #sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+    #自定义填充策略接口实现
+    #meta-object-handler: com.baomidou.springboot.xxx
+    configuration:
+#      驼峰命名开启
+      map-underscore-to-camel-case: true
+      cache-enabled: false
+
+logging:
+  config: classpath:logback.xml
+
+upload: #文件上传配置
+  localtion:  #配置默认文件保存位置
+    windows: D:/mrmj/photo
+    linux:     /root/file
+  maxFileSize: 204800KB #单个文件最大KB/MB
+  maxRequestSize: 1024000KB   #设置总上传数据总大小FileUploadImgController
