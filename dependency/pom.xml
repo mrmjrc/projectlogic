@@ -276,11 +276,13 @@
         </dependency>-->
 
         <!-- 百度富文本 -->
-        <!--<dependency>-->
-        <!--<groupId>com.baidu</groupId>-->
-        <!--<artifactId>ueditor</artifactId>-->
-        <!--<version>1.1.2</version>-->
-        <!--</dependency> -->
+
+        <dependency>
+            <groupId>cn.songxinqiang</groupId>
+            <artifactId>com.baidu.ueditor</artifactId>
+            <version>1.1.2-offical</version>
+        </dependency>
+
         <!--<dependency>-->
         <!--<groupId>com.dcssn</groupId>-->
         <!--<artifactId>ueditor-spring-boot-starter</artifactId>-->
