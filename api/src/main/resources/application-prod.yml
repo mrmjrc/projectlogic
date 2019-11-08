@@ -1,0 +1,26 @@
+spring:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/projectlogic?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+      username: root
+      password: root
+      type: com.alibaba.druid.pool.DruidDataSource
+      druid:
+        max-active: 20
+        initial-size: 5
+        min-idle: 5
+        max-wait: 60000
+        time-between-eviction-runs-millis: 60000
+        min-evictable-idle-time-millis: 300000
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+#配置redis地址
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      maxTotal: 100
+      maxIdle: 10
+      maxWaitMillis: 100000
+      #密码默认为空
+      password:
