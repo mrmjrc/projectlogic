@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -22,14 +23,15 @@ import java.util.Properties;
 
 /**
  * ComponentScan做的事情就是告诉Spring从哪里找到bean
+ * Application.class 加上注解@EnableSwagger2 表示开启Swagger
  * @Description application 整个项目启动类
  * @Author mrmj
  * @Date 2019/11/8 17:15
  */
 @Configuration
 @EnableSwagger2
-//@SpringBootApplication
-@ComponentScan("cn.mrmj")
+@SpringBootApplication
+//@ComponentScan("cn.mrmj")
 @MapperScan("cn.mrmj.mapper")
 public class ApiApplication extends SpringBootServletInitializer {
 
