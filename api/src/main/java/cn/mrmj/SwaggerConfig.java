@@ -21,7 +21,7 @@ import static com.google.common.base.Predicates.or;
 import static springfox.documentation.builders.PathSelectors.regex;
 
 /**
- * @Description
+ * @Description swagger配置文件
  * @Author mrmj
  * @Date 2019/11/8 18:00
  */
@@ -60,9 +60,9 @@ public class SwaggerConfig {
         pars.add(tokenPar.build());
         pars.add(userPar.build());
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("tiandingkeji-admin-api")
+                .groupName("mrmj-admin-api")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.tiandingkeji.api.admin"))
+                .apis(RequestHandlerSelectors.basePackage("cn.mrmj.api.admin"))
                 .paths(PathSelectors.any())
                 .build()
                 .globalOperationParameters(pars)
@@ -106,8 +106,8 @@ public class SwaggerConfig {
     }
 
     private ApiInfo appApiInfo() {
-        String title = "阿莎希-田丁科技-移动端-系统接口";
-        String description = "阿莎希-田丁科技-移动端-系统接口文档";
+        String title = "移动端-系统接口";
+        String description = "移动端-系统接口文档";
         String version = "1.0.0-snapshot";
         Contact DEFAULT_CONTACT = new Contact("", "", "");
         ApiInfo apiInfo = new ApiInfo(title, description, version,
@@ -115,8 +115,8 @@ public class SwaggerConfig {
         return apiInfo;
     }
     private ApiInfo adminApiInfo() {
-        String title = "阿莎西-田丁科技-后台管理-系统接口";
-        String description = "阿莎西-田丁科技-后台管理-系统接口文档";
+        String title = "后台管理-系统接口";
+        String description = "后台管理-系统接口文档";
         String version = "1.0.0-snapshot";
         Contact DEFAULT_CONTACT = new Contact("", "", "");
         ApiInfo apiInfo = new ApiInfo(title, description, version,
