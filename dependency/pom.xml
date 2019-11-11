@@ -225,13 +225,13 @@
             <version>2.6</version>
         </dependency>
 
-        <!--lombok，实体类的插件，因为已经idea导入了插件，所以不再需要这个了-->
-       <!-- <dependency>
+        <!--lombok 注解类，和idea的lombok插件配合使用-->
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.10</version>
             <scope>provided</scope>
-        </dependency>-->
+        </dependency>
 
         <!--大数据工具：IKAnalyzer分词工具-->
         <dependency>
