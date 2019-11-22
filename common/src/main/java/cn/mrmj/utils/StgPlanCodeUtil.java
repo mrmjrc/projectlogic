@@ -66,4 +66,9 @@ public class StgPlanCodeUtil {
         }
         return code;
     }
+
+    public static void main(String[] args) {
+        String utiles = getVCode();
+        System.out.println(utiles);
+    }
 }

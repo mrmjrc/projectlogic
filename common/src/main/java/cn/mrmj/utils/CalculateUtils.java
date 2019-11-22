@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 
 /**
  * create by: mrmj
- * description: 计算价格等等的计算器
+ * description: 计算价格等其他的计算器
  * create time: 2019/11/12 18:39
  */
 public class CalculateUtils {
