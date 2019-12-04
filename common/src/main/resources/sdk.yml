@@ -1,0 +1,31 @@
+accessKeyId: *******
+accessKeySecret: *****
+sms:
+  signName: 短信签名
+  templateCode: 短信模板(有多个配置多个)
+#  templateCode1: 短信模板(有多个配置多个)
+oss:
+  end-point: oss-cn-***.aliyuncs.com
+  access-key: IO4OKFcLQfca-e*******fA-IT1-gSl6h7tfv
+  access-key-secret: wGdpMJOIgs*********M4Oig7ogCpNd7Ql_aMkT
+  bucket-name: *****
+  base-url: http://********.com
+  expires: 3600
+pay:
+  appid: *********
+#   合作身份者ID，以2088开头由16位纯数字组成的字符串
+  partner: 208803****639863
+#  商户的私钥
+  private_key: *********
+#  支付宝的公钥，无需修改该值
+  ali_public_key: *********
+#  商家账号
+  ali_seller_email: m17196***0@163.com
+#  调试用，创建TXT日志文件夹路径
+  log_path: D:\\
+#  字符编码格式 目前支持 gbk 或 utf-8
+  input_charset: utf-8
+#   签名方式 不需修改
+  sign_type: RSA2
+#  支付宝支付回调地址
+  apiPayReturn: http://*********
