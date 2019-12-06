@@ -1,7 +1,7 @@
 spring:
     datasource:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/projectlogic?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+      url: jdbc:mysql://localhost:3306/projectlogic?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
       username: root
       password: root
       type: com.alibaba.druid.pool.DruidDataSource

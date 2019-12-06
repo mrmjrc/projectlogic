@@ -45,11 +45,11 @@ public class SwaggerConfig {
                 //通过select()函数返回一个ApiSelectorBuilder实例,用来控制哪些接口暴露给Swagger来展现
                 .select()
                 //扫描指定包
-                .apis(RequestHandlerSelectors.basePackage("cn.mrmj.api.app"))
+                //.apis(RequestHandlerSelectors.basePackage("cn.mrmj.api"))
                 //扫描的路径，扫描所有的路径里的接口，全部暴露出去
-                .paths(PathSelectors.any())
+                //.paths(PathSelectors.any())
                 //根据指定的path规则扫描对应的路径里面接口，并暴露在swagger中
-                //.paths(paths())
+                .paths(paths())
                 .build()
                 //定义全局的请求参数
                 .globalOperationParameters(pars)
@@ -69,10 +69,10 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("mrmj-admin-api")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.mrmj.api.admin"))
-                .paths(PathSelectors.any())
+                //.apis(RequestHandlerSelectors.basePackage("cn.mrmj.api.admin"))
+                //.paths(PathSelectors.any())
                 //定义不同的扫描规则
-                //.paths(admPaths())
+                .paths(admPaths())
                 .build()
                 .globalOperationParameters(pars)
                 .apiInfo(adminApiInfo());

@@ -57,6 +57,3 @@ upload: #文件上传配置
   maxFileSize: 204800KB #单个文件最大KB/MB
   maxRequestSize: 1024000KB   #设置总上传数据总大小FileUploadImgController
 
-#阿里大鱼
-accessKeyId=LTAITlDyhupiOKN2
-accessKeySecret=ViwO8yMYAb7SgvhmOeFHu5EZ7ZthFE

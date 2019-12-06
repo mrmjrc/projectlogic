@@ -2,7 +2,6 @@
 accessKeyId: LTAITlDyhupiOKN2
 accessKeySecret: ViwO8yMYAb7SgvhmOeFHu5EZ7ZthFE
 sms:
-  sig
   template_code: SMS_160855735
 #sign_name: 慕容梦洁（需要将汉字转换）
   sign_name: \u6155\u5bb9\u68a6\u6d01

@@ -75,11 +75,12 @@ public class FileUploadImgController {
         }
     }
 
-    private static final String HTTP_HOST = "http://qiandian.oss-cn-hangzhou.aliyuncs.com/";
+    //配置静态信息
+    private static final String HTTP_HOST = "http://projectlogic.oss-cn-hangzhou.aliyuncs.com";
     private static final String endpoint = "http://oss-cn-hangzhou.aliyuncs.com";
-    private static final String accessKeyId = "BiTAsyfdFmA0z8tY";
-    private static final String accessKeySecret = "I6gJTGcUExCse51s1XIU3mlXu1xmQq";
-    private static final String bucketName = "qiandian";
+    private static final String accessKeyId = "LTAITlDyhupiOKN2";
+    private static final String accessKeySecret = "ViwO8yMYAb7SgvhmOeFHu5EZ7ZthFE";
+    private static final String bucketName = "projectlogic";
 
 
     /**
