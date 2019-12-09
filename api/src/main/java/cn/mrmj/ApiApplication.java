@@ -33,7 +33,7 @@ import java.util.Properties;
 @EnableSwagger2
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 //@ComponentScan("cn.mrmj")
-@MapperScan("cn.mrmj.mapper")
+@MapperScan(basePackages = "cn.mrmj.mapper")
 public class ApiApplication extends SpringBootServletInitializer {
 
     @Override

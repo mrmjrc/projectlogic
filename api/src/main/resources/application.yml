@@ -17,6 +17,7 @@ spring:
 
 # Mybatis配置
 mybatis-plus:
+  typeEnumsPackage: cn.mrmj.entity
 #  指定 mapper.xml 的路径，扫描mapper.xml
   mapper-locations: classpath:mapper/**/*.xml
 #  实体类的扫描，多个package用逗号或者分号分隔
