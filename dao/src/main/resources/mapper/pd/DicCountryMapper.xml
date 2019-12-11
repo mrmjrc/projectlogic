@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.mrmj.mapper.pd.DicCountryMapper">
+  <resultMap id="BaseResultMap" type="cn.mrmj.entity.pd.DicCountry">
+    <id column="country_id" jdbcType="INTEGER" property="countryId" />
+    <result column="country_name" jdbcType="VARCHAR" property="countryName" />
+    <result column="continent_id" jdbcType="INTEGER" property="continentId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="is_del" jdbcType="TINYINT" property="isDel" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    country_id, country_name, continent_id, create_time, update_time, is_del
+  </sql>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from dic_country
+    where country_id = #{countryId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from dic_country
+    where country_id = #{countryId,jdbcType=INTEGER}
+  </delete>
+
+
+
+  <select id="selectAllCountry" parameterType="java.lang.Byte" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from dic_country
+    where is_del = #{is_del,jdbcType=TINYINT} ORDER BY  continent_id
+  </select>
+
+  <select id="selectCountryByCon" parameterType="map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from dic_country
+    where continent_id=#{continetId,jdbcType=VARCHAR}
+    and is_del = #{is_del,jdbcType=TINYINT}
+  </select>
+
+  <update id="deleteByCountryId" >
+      update dic_country
+      set
+        is_del = 2
+      where
+      country_id = #{countryId, jdbcType = INTEGER}
+  </update>
+
+  <select id="selectIdByName" parameterType="map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from dic_country
+    <where>
+       is_del = #{is_del,jdbcType=TINYINT}
+       <if test="countryName != null and countryName!=''">
+        and  country_name=#{countryName,jdbcType=VARCHAR}
+       </if>
+    </where>
+  </select>
+
+</mapper>

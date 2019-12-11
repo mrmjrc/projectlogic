@@ -1,7 +1,7 @@
 package cn.mrmj.entity;
 
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.plugins.Page;
 
 /**
  * create by: mrmj

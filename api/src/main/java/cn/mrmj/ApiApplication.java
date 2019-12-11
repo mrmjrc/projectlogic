@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -31,8 +32,8 @@ import java.util.Properties;
  */
 @Configuration
 @EnableSwagger2
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-//@ComponentScan("cn.mrmj")
+@SpringBootApplication
+@AutoConfigureAfter({DataSourceAutoConfiguration.class})
 @MapperScan(basePackages = "cn.mrmj.mapper")
 public class ApiApplication extends SpringBootServletInitializer {
 
