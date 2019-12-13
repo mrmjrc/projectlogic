@@ -81,6 +81,7 @@ public class SwaggerConfig {
     private Predicate<String> paths() {
         return or(
                 regex("/upload/api.*"),
+                regex("/delete/api.*"),
                 regex("/app.*.v1.*")
         );
     }
@@ -88,6 +89,7 @@ public class SwaggerConfig {
     private Predicate<String> admPaths() {
         return or(
                 regex("/upload/api.*"),
+                regex("/delete/api.*"),
                 regex("/admin.*.v1.*")
         );
     }
