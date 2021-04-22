@@ -18,7 +18,7 @@
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring</artifactId>
-            <version>1.4.1</version>
+            <version>1.7.0</version>
         </dependency>
 
         <!-- 将对shiro的缓冲使用EhCache来管理，之后授权时只有用户第一次访问系统的
